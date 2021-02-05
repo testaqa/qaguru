@@ -31,7 +31,7 @@ public class QaGuruTests {
 
         $x("//label[contains(text(), 'Reading')]").click();
 
-        $("#uploadPicture").uploadFile(new File("src/test/resources/test.png"));
+        $("#uploadPicture").uploadFromClasspath("test.png");
 
         $("#currentAddress").setValue("testStreet 222, ap. 15");
 

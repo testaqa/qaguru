@@ -2,14 +2,26 @@ plugins {
     id 'java-library'
 }
 
+group 'guru.qa'
+version '1.0-SNAPSHOT'
+
 repositories {
     mavenCentral()
 }
 
+compileTestJava{
+    options.encoding = 'UTF-8'
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
 dependencies {
-    testImplementation "org.junit.jupiter:junit-jupiter-api:5.6.2"
-    testImplementation 'com.codeborne:selenide:5.17.3'
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.6.2"
+    testImplementation 'com.codeborne:selenide:5.18.0'
+    testImplementation 'org.slf4j:slf4j-simple:1.7.29'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
 
 test {
