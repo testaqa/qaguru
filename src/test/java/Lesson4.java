@@ -2,6 +2,7 @@ import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
+import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
@@ -14,18 +15,18 @@ public class Lesson4 {
     void AutomationPracticeFormTest() {
         Faker faker = new Faker();
 
-        var firstName = faker.name().firstName();
-        var lastName = faker.name().lastName();
-        var email = faker.internet().emailAddress();
-        var gender = "Other";
-        var mobile = faker.phoneNumber().subscriberNumber(10);
-        var birthday = faker.date().birthday().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();// LocalDate.of(1979, Month.MAY, 10);
-        var subjects = "Maths";
-        var hobby = "Reading";
-        var pictureFile = "test.png";
-        var address = faker.address().fullAddress();
-        var state = "Haryana";
-        var city = "Panipat";
+        String firstName = faker.name().firstName();
+        String lastName = faker.name().lastName();
+        String email = faker.internet().emailAddress();
+        String gender = "Other";
+        String mobile = faker.phoneNumber().subscriberNumber(10);
+        LocalDate birthday = faker.date().birthday().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();// LocalDate.of(1979, Month.MAY, 10);
+        String subjects = "Maths";
+        String hobby = "Reading";
+        String pictureFile = "test.png";
+        String address = faker.address().fullAddress();
+        String state = "Haryana";
+        String city = "Panipat";
 
         open("https://demoqa.com/automation-practice-form");
 

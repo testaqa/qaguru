@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
-import java.io.File;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
@@ -14,18 +13,18 @@ public class QaGuruTests {
     @Test
     void AutomationPracticeFormTest() {
 
-        var firstName = "testFirstName";
-        var lastName = "testLastName";
-        var email = "testEmail@test.com";
-        var gender = "Other";
-        var mobile = "1234567890";
-        var birthday = LocalDate.of(1979, Month.MAY, 10);
-        var subjects = "Maths";
-        var hobby = "Reading";
-        var pictureFile = "test.png";
-        var address = "testStreet 222, ap. 15";
-        var state = "Haryana";
-        var city = "Panipat";
+        String firstName = "testFirstName";
+        String lastName = "testLastName";
+        String email = "testEmail@test.com";
+        String gender = "Other";
+        String mobile = "1234567890";
+        LocalDate birthday = LocalDate.of(1979, Month.MAY, 10);
+        String subjects = "Maths";
+        String hobby = "Reading";
+        String pictureFile = "test.png";
+        String address = "testStreet 222, ap. 15";
+        String state = "Haryana";
+        String city = "Panipat";
 
         open("https://demoqa.com/automation-practice-form");
 

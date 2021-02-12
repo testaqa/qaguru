@@ -2,6 +2,9 @@
 .gradle/
 build/
 gradle/
+.allure/
 
 gradlew
 gradlew.bat
+
+*.log
