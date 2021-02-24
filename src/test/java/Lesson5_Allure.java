@@ -19,12 +19,12 @@ public class Lesson5_Allure {
     }
 
     @Test
-    void AllureCleanSelenide(){
+    void allureCleanSelenide(){
         open("https://github.com/");
 
         $("input[name=q]").setValue(REPOSITORY);
         $("input[name=q]").submit();
-        $("ul.repo-list li:first-child a.v-align-middle").click();
+        $("ul.repo-list").$("a").click();
 
         $("span[data-content='Issues']").click();
 
@@ -32,7 +32,7 @@ public class Lesson5_Allure {
     }
 
     @Test
-    void AllureLambda() {
+    void allureLambda() {
 
         feature("Issues with Lambda");
         story("Тест который найдет issue по имени");
@@ -47,7 +47,7 @@ public class Lesson5_Allure {
 
             $("input[name=q]").setValue(REPOSITORY);
             $("input[name=q]").submit();
-            $("ul.repo-list li:first-child a.v-align-middle").click();
+            $("ul.repo-list").$("a").click();
         });
 
         step("Перейти на вкладку Issues", () -> {
@@ -62,7 +62,7 @@ public class Lesson5_Allure {
     }
 
     @Test
-    void AllureSteps() {
+    void allureSteps() {
         steps.openMainPage();
         steps.findRepo(REPOSITORY);
         steps.openIssuesTab();
@@ -70,7 +70,7 @@ public class Lesson5_Allure {
     }
 
     @Test
-    void AllureSteps_Failed() {
+    void allureSteps_Failed() {
         steps.openMainPage();
         steps.findRepo(REPOSITORY);
         steps.openIssuesTab();

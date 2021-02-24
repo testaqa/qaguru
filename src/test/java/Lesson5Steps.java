@@ -17,7 +17,7 @@ public class Lesson5Steps {
     public void findRepo(String repository) {
         $("input[name=q]").setValue(repository);
         $("input[name=q]").submit();
-        $("ul.repo-list li:first-child a.v-align-middle").click();
+        $("ul.repo-list").$("a").click();
     }
 
     @Step("Перейти на вкладку Issues")
