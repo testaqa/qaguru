@@ -7,12 +7,13 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class Lesson4 {
 
     @Test
-    void AutomationPracticeFormTest() {
+    void automationPracticeFormTest() {
         Faker faker = new Faker();
 
         String firstName = faker.name().firstName();
@@ -41,12 +42,13 @@ public class Lesson4 {
         $("#userNumber").setValue(mobile);
 
         $("#dateOfBirthInput").sendKeys(Keys.chord(Keys.CONTROL, "a"));
-        $("#dateOfBirthInput").sendKeys(birthday.format(DateTimeFormatter.ofPattern("dd LLLL yyyy")));
+        $("#dateOfBirthInput").setValue(birthday.format(DateTimeFormatter.ofPattern("dd LLLL yyyy")));
         $("#dateOfBirthInput").pressEnter();
 
         $("#subjectsInput").setValue(subjects).pressEnter();
 
-        $x("//label[contains(text(), '" + hobby + "')]").click();
+//        $x("//label[contains(text(), '" + hobby + "')]").click();
+        $(byText(hobby)).click();
 
         $("#uploadPicture").uploadFromClasspath(pictureFile);
 
