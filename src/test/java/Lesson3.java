@@ -2,7 +2,7 @@ import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class Lesson3 {
@@ -12,7 +12,7 @@ public class Lesson3 {
         open("https://github.com/");
 
         $("input[name=q]").setValue("Selenide").pressEnter();
-        $("ul.repo-list li:first-child a.v-align-middle").click();
+        $("ul.repo-list").$("a").click();
         $("span[data-content='Wiki']").click();
 
         $$("li a").shouldHave(CollectionCondition.itemWithText("Soft assertions"));
@@ -20,7 +20,8 @@ public class Lesson3 {
         $$("li a").findBy(text("Soft assertions")).click();
 
         // Assert
-        $x("//ol[li[contains(text(), 'JUnit5')]]/following-sibling::div[1][contains(@class, 'highlight-source-java')]").should(Condition.exist);
+//        $x("//ol[li[contains(text(), 'JUnit5')]]/following-sibling::div[1][contains(@class, 'highlight-source-java')]").should(Condition.exist);
+        $("#wiki-body").shouldHave(text("Using JUnit")).should(visible);
     }
 
     @Test
